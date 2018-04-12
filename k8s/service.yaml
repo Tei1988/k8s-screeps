@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: screeps
+  name: screeps
+spec:
+  ports:
+    - name: game
+      port: 21025
+      protocol: TCP
+    - name: cli
+      port: 21026
+      protocol: TCP
+  selector:
+    app: screeps
+  type: LoadBalancer
